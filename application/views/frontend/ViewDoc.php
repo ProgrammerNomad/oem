@@ -126,20 +126,26 @@
               <li class="header">
                 Menu</li>
               <li>
-                <a href="dashboard">
+                <a href="d/ashboard">
                   <i class="fa fa-server"></i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li>
-                <a href="Auth/login_front">
+                <a href="/category">
+                  <i class="fa fa-server"></i>
+                  <span>OEM Module</span>
+                </a>
+              </li>
+              <li>
+                <a href="/Auth/login_front">
                   <i class="fa fa-sign-out"></i>
                   <span>Logout</span>
                 </a>
               </li>
             </ul>
 
-            
+
           </div>
         </div>
       </section>

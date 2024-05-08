@@ -127,6 +127,12 @@
                 </a>
               </li>
               <li>
+                <a href="/category">
+                  <i class="fa fa-server"></i>
+                  <span>OEM Module</span>
+                </a>
+              </li>
+              <li>
                 <a href="Auth/login_front">
                   <i class="fa fa-sign-out"></i>
                   <span>Logout</span>
