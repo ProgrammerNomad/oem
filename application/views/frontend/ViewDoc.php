@@ -23,11 +23,11 @@
   <title>ViewDoc - Dashboard</title>
 
   <!-- Vendors Style-->
-  <link rel="stylesheet" href="http://localhost/src/css/vendors_css.css">
+  <link rel="stylesheet" href="/src/css/vendors_css.css">
 
   <!-- Style-->
-  <link rel="stylesheet" href="http://localhost/src/css/style.css">
-  <link rel="stylesheet" href="http://localhost/src/css/skin_color.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/skin_color.css">
   <style>
     .as_bb {
       text-align: center;
@@ -55,12 +55,12 @@
         <a href="/" class="logo">
           <!-- logo-->
           <div class="logo-mini w-30">
-            <span class="light-logo"><img src="http://localhost/images/logo-letter.png" alt="logo"></span>
-            <span class="dark-logo"><img src="http://localhost/images/logo-letter-white.png" alt="logo"></span>
+            <span class="light-logo"><img src="/images/logo-letter.png" alt="logo"></span>
+            <span class="dark-logo"><img src="/images/logo-letter-white.png" alt="logo"></span>
           </div>
           <div class="logo-lg">
-            <span class="light-logo"><img src="http://localhost/images/logo-dark-text.png" alt="logo"></span>
-            <span class="dark-logo"><img src="http://localhost/images/logo-light-text.png" alt="logo"></span>
+            <span class="light-logo"><img src="/images/logo-dark-text.png" alt="logo"></span>
+            <span class="dark-logo"><img src="/images/logo-light-text.png" alt="logo"></span>
           </div>
         </a>
       </div>
@@ -102,7 +102,7 @@
           <a href="/" class="logo">
             <!-- logo-->
             <div class="logo-mini">
-              <span class="light-logo"><img src="http://localhost/images/logo-letter.png" alt="logo"></span>
+              <span class="light-logo"><img src="/images/logo-letter.png" alt="logo"></span>
             </div>
 
           </a>
@@ -110,7 +110,7 @@
         <div class="user-profile my-15 px-20 py-10 b-1 rounded10 mx-15">
           <div class="d-flex align-items-center justify-content-between">
             <div class="image d-flex align-items-center">
-              <img src="http://localhost/images/avatar/avatar-13.png" class="rounded-0 me-10" alt="User Image">
+              <img src="/images/avatar/avatar-13.png" class="rounded-0 me-10" alt="User Image">
               <div>
                 <h4 class="mb-0 fw-600">Nil Yeager</h4>
                 <p class="mb-0">Admin</p>
@@ -643,7 +643,7 @@
         <div class="row">
           <div class="col-xl-8 pe-xl-0">
             <div class="card text-white mb-0 b-0" style="margin-bottom: 0 !important;">
-              <img class="card-img" src="http://localhost/images/preview/bg.jpg" alt="Card image">
+              <img class="card-img" src="/images/preview/bg.jpg" alt="Card image">
               <div class="card-img-overlay">
                 <div class="row justify-content-between">
                   <div class="col-auto bg-dark rounded">
@@ -662,7 +662,7 @@
               <div class="test">
                 <div class="card-header d-block">
                   <div class="media p-0">
-                    <img class="img-fluid w-50 ms-0" src="http://localhost/images/avatar/1.jpg" alt="placeholder image">
+                    <img class="img-fluid w-50 ms-0" src="/images/avatar/1.jpg" alt="placeholder image">
                     <div class="media-body">
                       <h4 class="mt-0">By John Doe</h4>
                       <p>5 min ago</p>
@@ -708,19 +708,19 @@
                       <h5 class="mb-0 me-10 fs-14 d-inline-block">Sponsor by</h5>
                       <div class="d-inline-block">
                         <a href="#">
-                          <img class="img-fluid w-30" src="http://localhost/images/avatar/3.jpg"
+                          <img class="img-fluid w-30" src="/images/avatar/3.jpg"
                             alt="placeholder image">
                         </a>
                         <a href="#">
-                          <img class="img-fluid w-30" src="http://localhost/images/avatar/4.jpg"
+                          <img class="img-fluid w-30" src="/images/avatar/4.jpg"
                             alt="placeholder image">
                         </a>
                         <a href="#">
-                          <img class="img-fluid w-30" src="http://localhost/images/avatar/5.jpg"
+                          <img class="img-fluid w-30" src="/images/avatar/5.jpg"
                             alt="placeholder image">
                         </a>
                         <a href="#">
-                          <img class="img-fluid w-30" src="http://localhost/images/avatar/6.jpg"
+                          <img class="img-fluid w-30" src="/images/avatar/6.jpg"
                             alt="placeholder image">
                         </a>
                       </div>
@@ -745,18 +745,18 @@
 
 
   <!-- Vendor JS -->
-  <script src="http://localhost/src/js/vendors.min.js"></script>
-  <script src="http://localhost/src/js/pages/chat-popup.js"></script>
-  <script src="http://localhost/assets/icons/feather-icons/feather.min.js"></script>
+  <script src="/src/js/vendors.min.js"></script>
+  <script src="/src/js/pages/chat-popup.js"></script>
+  <script src="/assets/icons/feather-icons/feather.min.js"></script>
 
-  <script src="http://localhost/assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>
-  <script src="http://localhost/cdn.amcharts.com/lib/4/core.js"></script>
-  <script src="http://localhost/cdn.amcharts.com/lib/4/charts.js"></script>
-  <script src="http://localhost/cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  <script src="/assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>
+  <script src="/cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="/cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="/cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
   <!-- CRMi App -->
-  <script src="http://localhost/src/js/template.js"></script>
-  <script src="http://localhost/src/js/pages/dashboard.js"></script>
+  <script src="/src/js/template.js"></script>
+  <script src="/src/js/pages/dashboard.js"></script>
 
 
 

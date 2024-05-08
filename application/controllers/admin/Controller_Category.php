@@ -131,11 +131,17 @@ class Controller_Category extends Admin_Controller
 
             $status = ($value['active'] == 1) ? '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>';
 
-            $parentCategoryName = $this->model_category->getParentCategoryNameById($value['parent_category']);
+            $parentCategory = $this->model_category->getParentCategoryNameById($value['parent_category']);
+
+            if($parentCategory['parent_category'] != 0)
+            echo  '<pre>';
+            print_r($parentCategory);
+
+           // die();
 
             $result['data'][$key] = array(
                 $value['name'],
-                $parentCategoryName,
+                $parentCategory,
                 // Display parent category name instead of ID
 
                 $status,

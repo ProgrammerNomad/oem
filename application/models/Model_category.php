@@ -29,18 +29,12 @@ class Model_category extends CI_Model
 		return $query->result_array();
 	}
 	public function getParentCategoryNameById($parentCategoryId)
-{
-    
-    $queryResult = $this->db->query("SELECT name FROM categories WHERE id = ?", array($parentCategoryId));
+	{
 
-    $parentCategoryName = ''; 
-    if ($queryResult->num_rows() > 0) {
-        $row = $queryResult->row_array();
-        $parentCategoryName = $row['name']; 
-    }
-
-    return $parentCategoryName; 
-}
+		$sql = "SELECT * FROM categories WHERE id = ?";
+		$query = $this->db->query($sql, array($parentCategoryId));
+		return $query->row_array();
+	}
 
 
 	public function create($data)
@@ -57,16 +51,16 @@ class Model_category extends CI_Model
 			$query = $this->db->get('categories');
 			return $query->row_array();
 		} else {
-			return null; 
+			return null;
 		}
 	}
-	
+
 
 	public function update($data, $id)
 	{
 
 		// print_r($data);die();
-		if($data && $id) {
+		if ($data && $id) {
 			$this->db->where('id', $id);
 			$update = $this->db->update('categories', $data);
 			return ($update == true) ? true : false;
@@ -76,16 +70,16 @@ class Model_category extends CI_Model
 
 
 
-public function GetAllCat()
-{
-	$query = $this->db->query("SELECT * from categories");
-	return $query->result();
+	public function GetAllCat()
+	{
+		$query = $this->db->query("SELECT * from categories");
+		return $query->result();
 
-}
+	}
 
 
 
-public function remove($id)
+	public function remove($id)
 	{
 		if ($id) {
 			$this->db->where('id', $id);
