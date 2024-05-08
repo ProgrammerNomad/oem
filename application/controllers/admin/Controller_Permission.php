@@ -134,17 +134,17 @@ class Controller_Permission extends Admin_Controller
 				$check = $this->model_groups->existInUserGroup($id);
 				if($check == true) {
 					$this->session->set_flashdata('error', 'Group exists in the users');
-	        		redirect('Controller_Permission/', 'refresh');
+	        		redirect('/admin/Controller_Permission/', 'refresh');
 				}
 				else {
 					$delete = $this->model_groups->delete($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('Controller_Permission/', 'refresh');
+		        		redirect('/admin/Controller_Permission/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('Controller_Permission/delete/'.$id, 'refresh');
+		        		redirect('/admin/Controller_Permission/delete/'.$id, 'refresh');
 		        	}
 				}	
 			}	
