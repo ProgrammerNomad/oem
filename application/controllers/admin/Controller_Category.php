@@ -24,16 +24,16 @@ class Controller_Category extends Admin_Controller
 
 		foreach($cat as $ChildCat)
 		{
-			$options .= '<option value= "'.$ChildCat->id.'">'.$ChildCat->name.'</option>';
+			$options .= '<option class="cat" value= "'.$ChildCat->id.'">'.$ChildCat->name.'</option>';
 			$cat1 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*",['active'=>1, 'parent_category'=>$ChildCat->id])->result();
 			foreach($cat1 as $ChildCat1)
 			{
-				$options .= '<option value= "'.$ChildCat1->id.'">-'.$ChildCat1->name.'</option>';
+				$options .= '<option class="cat-1" value= "'.$ChildCat1->id.'">-'.$ChildCat1->name.'</option>';
 
 			}
 			foreach($cat1 as $ChildCat2)
 			{
-				$options .= '<option value= "'.$ChildCat2->id.'">--'.$ChildCat2->name.'</option>';
+				$options .= '<option class="cat-2" value= "'.$ChildCat2->id.'">--'.$ChildCat2->name.'</option>';
 
 			}
 		}
