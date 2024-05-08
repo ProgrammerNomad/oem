@@ -134,6 +134,9 @@ class Controller_Category extends Admin_Controller
             $parentCategory = $this->model_category->getParentCategoryNameById($value['parent_category']);
 
             if($parentCategory['parent_category'] != 0)
+            {
+                
+            }
             echo  '<pre>';
             print_r($parentCategory);
 
