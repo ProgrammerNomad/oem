@@ -126,7 +126,7 @@
               <li class="header">
                 Menu</li>
               <li>
-                <a href="d/ashboard">
+                <a href="/dashboard">
                   <i class="fa fa-server"></i>
                   <span>Dashboard</span>
                 </a>
