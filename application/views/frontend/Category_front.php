@@ -164,17 +164,17 @@
                   <div class="row" style="    margin-top: 20px;
                     margin-bottom: 30px;">
                     <div class="col-md-4">
-
-                      <?php
-
-                      //print_r($ParentCategory);
-
-                      <div class="col-md-12 as_bb">
+                    <div class="col-md-12 as_bb">
                         <a href="/dashboard/" class="waves-effect waves-light nav-link bg-primary btn-primary  fs-14"
                           title="Dashboard">
                           << Back
                         </a>
                       </div>
+                      <?php
+
+                      //print_r($ParentCategory);
+
+                      
 
                       foreach ($ParentCategory as $Category) {
 
