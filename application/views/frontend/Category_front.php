@@ -165,7 +165,7 @@
                     margin-bottom: 30px;">
                     <div class="col-md-4">
                     <div class="col-md-12 as_bb">
-                        <a href="/dashboard/" class="waves-effect waves-light nav-link bg-primary btn-primary  fs-14"
+                        <a href="/dashboard" class="waves-effect waves-light nav-link bg-primary btn-primary  fs-14"
                           title="Dashboard">
                           << Back
                         </a>
