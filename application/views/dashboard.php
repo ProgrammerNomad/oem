@@ -17,7 +17,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="display:none;">
       <!-- Small boxes (Stat box) -->
       <?php if($is_admin == true): ?>
 
