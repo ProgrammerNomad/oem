@@ -33,6 +33,13 @@ class Controller_Category extends Admin_Controller
                 foreach ($Cat2 as $ChildCat2) {
                     $options .= '<option class="cat-2" value= "' . $ChildCat2->id . '">--' . $ChildCat2->name . '</option>';
 
+                    $Cat3 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat2->id])->result();
+
+                    foreach ($Cat3 as $ChildCat3) {
+                        $options .= '<option class="cat-2" value= "' . $ChildCat3->id . '">--' . $ChildCat3->name . '</option>';
+    
+                    }
+                
                 }
 
             }
