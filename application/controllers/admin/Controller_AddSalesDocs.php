@@ -238,7 +238,15 @@ class Controller_AddSalesDocs extends Admin_Controller
 
 						foreach ($Cat3 as $ChildCat3) {
 
+							if ($DocData[0]->category_id == $ChildCat3->id) {
+
+								$options .= '<option class="cat-2" value= "' . $ChildCat3->id . '" selected>---' . $ChildCat3->name . '</option>';
+
+							}else{
+
 							$options .= '<option class="cat-2" value= "' . $ChildCat3->id . '">---' . $ChildCat3->name . '</option>';
+
+						}
 
 						}
 
