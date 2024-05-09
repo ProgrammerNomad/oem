@@ -114,7 +114,7 @@ class Controller_Category extends Admin_Controller
 
 			foreach ($cat as $ChildCat) {
 
-				if ($DocData[0]->category_id == $ChildCat->id) {
+				if ($ParentId == $ChildCat->id) {
 					$options .= '<option class="cat" value= "' . $ChildCat->id . '" selected>' . $ChildCat->name . '</option>';
 				} else {
 					$options .= '<option class="cat" value= "' . $ChildCat->id . '">' . $ChildCat->name . '</option>';
@@ -125,7 +125,7 @@ class Controller_Category extends Admin_Controller
 				$cat1 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat->id])->result();
 				foreach ($cat1 as $ChildCat1) {
 
-					if ($DocData[0]->category_id == $ChildCat1->id) {
+					if ($ParentId == $ChildCat1->id) {
 
 						$options .= '<option class="cat-1" value= "' . $ChildCat1->id . '" selected>-' . $ChildCat1->name . '</option>';
 
@@ -138,7 +138,7 @@ class Controller_Category extends Admin_Controller
 
 					foreach ($Cat2 as $ChildCat2) {
 
-						if ($DocData[0]->category_id == $ChildCat2->id) {
+						if ($ParentId == $ChildCat2->id) {
 
 							$options .= '<option class="cat-2" value= "' . $ChildCat2->id . '" selected>--' . $ChildCat2->name . '</option>';
 
@@ -152,7 +152,7 @@ class Controller_Category extends Admin_Controller
 
 						foreach ($Cat3 as $ChildCat3) {
 
-							if ($DocData[0]->category_id == $ChildCat3->id) {
+							if ($ParentId == $ChildCat3->id) {
 
 								$options .= '<option class="cat-2" value= "' . $ChildCat3->id . '" selected>---' . $ChildCat3->name . '</option>';
 
