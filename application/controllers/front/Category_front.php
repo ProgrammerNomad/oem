@@ -33,6 +33,14 @@ class Category_front extends CI_Controller
 
         $this->load->view('frontend/SubCategory', $data);
     }
+
+    public function SubCatTwo()
+    {
+        $data['ParentCategory'] = $this->ModelCategory->getChildCat($this->uri->segment(2));
+     
+
+        $this->load->view('frontend/SubCategory', $data);
+    }
     public function DocFile()
     {
         $data['DocFiles'] = $this->ModelCategory->getDocFiles($this->uri->segment(2));

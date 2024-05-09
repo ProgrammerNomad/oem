@@ -186,7 +186,7 @@
 
                       ?>
                       <div class="col-md-12 as_bb">
-                        <a href="/subcategorytwo/<?php echo $Category->id; ?>" class="waves-effect waves-light nav-link bg-primary btn-primary  fs-14"
+                        <a href="/docfile/<?php echo $Category->id; ?>" class="waves-effect waves-light nav-link bg-primary btn-primary  fs-14"
                           title="<?php echo $Category->name; ?>">
                           <?php echo $Category->name; ?>
                         </a>
