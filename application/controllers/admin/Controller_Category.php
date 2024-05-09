@@ -133,18 +133,33 @@ class Controller_Category extends Admin_Controller
 
             $parentCategory = $this->model_category->getParentCategoryNameById($value['parent_category']);
 
+            $breadcrumb = $parentCategory['name'];
+
             if($parentCategory['parent_category'] != 0)
             {
                 
+                $parentCategory2 = $this->model_category->getParentCategoryNameById($parentCategory['parent_category']);
+
+                $breadcrumb = $$parentCategory2['name'].' > '.$breadcrumb;
+
+                if($parentCategory2['parent_category'] != 0)
+                {
+                    
+                    $parentCategory3 = $this->model_category->getParentCategoryNameById($parentCategory2['parent_category']);
+    
+                    $breadcrumb = $parentCategory3['name'].' > '.$breadcrumb;
+    
+                }
+
             }
-            echo  '<pre>';
-            print_r($parentCategory);
+          //  echo  '<pre>';
+          //  print_r($parentCategory);
 
            // die();
 
             $result['data'][$key] = array(
                 $value['name'],
-                $parentCategory,
+                $breadcrumb,
                 // Display parent category name instead of ID
 
                 $status,
