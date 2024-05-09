@@ -140,7 +140,7 @@ class Controller_Category extends Admin_Controller
                 
                 $parentCategory2 = $this->model_category->getParentCategoryNameById($parentCategory['parent_category']);
 
-                $breadcrumb = $$parentCategory2['name'].' > '.$breadcrumb;
+                $breadcrumb = $parentCategory2['name'].' > '.$breadcrumb;
 
                 if($parentCategory2['parent_category'] != 0)
                 {
