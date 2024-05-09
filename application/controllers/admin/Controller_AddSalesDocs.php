@@ -200,30 +200,36 @@ class Controller_AddSalesDocs extends Admin_Controller
 
 			foreach ($cat as $ChildCat) {
 
-				if($DocData[0]->category_id == $ChildCat->id)
-				{
+				if ($DocData[0]->category_id == $ChildCat->id) {
 					$options .= '<option class="cat" value= "' . $ChildCat->id . '" selected>' . $ChildCat->name . '</option>';
-				}else{
+				} else {
 					$options .= '<option class="cat" value= "' . $ChildCat->id . '">' . $ChildCat->name . '</option>';
 				}
 
-				
-				
+
+
 				$cat1 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat->id])->result();
 				foreach ($cat1 as $ChildCat1) {
-					
-					$options .= '<option class="cat-1" value= "' . $ChildCat1->id . '">-' . $ChildCat1->name . '</option>';
+
+					if ($DocData[0]->category_id == $ChildCat1->id) {
+
+						$options .= '<option class="cat-1" value= "' . $ChildCat1->id . '" selected>-' . $ChildCat1->name . '</option>';
+
+					} else {
+
+						$options .= '<option class="cat-1" value= "' . $ChildCat1->id . '">-' . $ChildCat1->name . '</option>';
+					}
 
 					$Cat2 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat1->id])->result();
 
 					foreach ($Cat2 as $ChildCat2) {
-						
+
 						$options .= '<option class="cat-2" value= "' . $ChildCat2->id . '">--' . $ChildCat2->name . '</option>';
 
 						$Cat3 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat2->id])->result();
 
 						foreach ($Cat3 as $ChildCat3) {
-							
+
 							$options .= '<option class="cat-2" value= "' . $ChildCat3->id . '">---' . $ChildCat3->name . '</option>';
 
 						}
