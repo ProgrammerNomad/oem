@@ -73,7 +73,7 @@ class Controller_AddSalesDocs extends Admin_Controller
 
 			// Get data from Category table
 
-			$options = '';
+			$options = '<option class="cat" value="0">Select Category</option>';
 
 
 			$cat = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => 0])->result();
@@ -192,7 +192,7 @@ class Controller_AddSalesDocs extends Admin_Controller
 
 			// Get data from Category table
 
-			$options = '';
+			$options = '<option class="cat" value="0">Select Category</option>';
 
 
 			$cat = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => 0])->result();
