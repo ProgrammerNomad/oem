@@ -135,7 +135,23 @@ class Controller_Category extends Admin_Controller
 
             $breadcrumb = $parentCategory['name'];
 
-            
+            if($parentCategory['parent_category'] != 0)
+            {
+                
+                $parentCategory2 = $this->model_category->getParentCategoryNameById($parentCategory['parent_category']);
+
+                $breadcrumb = $parentCategory2['name'].' > '.$breadcrumb;
+
+                if($parentCategory2['parent_category'] != 0)
+                {
+                    
+                    $parentCategory3 = $this->model_category->getParentCategoryNameById($parentCategory2['parent_category']);
+    
+                    $breadcrumb = $parentCategory3['name'].' > '.$breadcrumb;
+    
+                }
+
+            }
           //  echo  '<pre>';
           //  print_r($parentCategory);
 
