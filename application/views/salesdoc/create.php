@@ -47,12 +47,7 @@
                 <label for="category_id">category_id</label>
                 <select class="form-control" id="category_id" name="category_id">
                   <?php
-                  foreach($company_data['categories'] as $cat)
-                  {
-
-                    echo '<option value="'.$cat->id.'">'.$cat->name.'</option>';
-
-                  } 
+                  echo $company_data['categories'] ;
                   ?>
                 </select>
               </div>
