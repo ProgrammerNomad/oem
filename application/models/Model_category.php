@@ -16,6 +16,9 @@ class Model_category extends CI_Model
 	}
 
 	/* get the brand data */
+
+	
+
 	public function getCategoryData($id = null)
 	{
 		if ($id->name) {

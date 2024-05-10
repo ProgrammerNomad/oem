@@ -24,7 +24,14 @@ class ModelCategory extends CI_Model
 		$query = $this->db->query("SELECT * FROM `sales_doc` WHERE `category_id` = '$id'");
 		return $query->result();
 	}
+	public function getCategory($id)
+	{
 
+		$sql = "SELECT * FROM categories WHERE id = ?";
+		$query = $this->db->query($sql, array($id));
+		return $query->row_array();
+
+	}
 
 
 

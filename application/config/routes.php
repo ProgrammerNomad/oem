@@ -67,7 +67,7 @@ $route['admin/salesdoc/update'] = 'admin/Controller_Salesdoc/update';
 $route['admin/salesdoc/delete'] = 'admin/Controller_Salesdoc/delete';
 
 $route['dashboard'] = 'front/Dashboard_front/index';
-$route['category'] = 'front/Category_front/index';
+$route['oem'] = 'front/Category_front/index';
 $route['subcategory/(:any)'] = 'front/Category_front/SubCat';
 $route['subcategorytwo/(:any)'] = 'front/Category_front/SubCatTwo';
 $route['docfile/(:any)'] = 'front/Category_front/DocFile';

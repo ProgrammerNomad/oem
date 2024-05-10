@@ -292,7 +292,9 @@ class Controller_Category extends Admin_Controller
             $response['messages'] = validation_errors(); // Include all form validation errors
         }
 
-        echo json_encode($response);
+        //echo json_encode($response);
+
+        redirect('admin/Controller_Category/index', 'refresh');
     }
 
 
