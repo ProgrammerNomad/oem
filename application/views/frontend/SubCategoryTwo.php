@@ -138,7 +138,7 @@
                 </a>
               </li>
               <li>
-                <a href="Auth/login_front">
+                <a href="/Auth/login_front">
                   <i class="fa fa-sign-out"></i>
                   <span>Logout</span>
                 </a>
