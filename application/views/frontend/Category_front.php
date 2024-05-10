@@ -107,9 +107,14 @@
             <div class="image d-flex align-items-center">
               <img src="images/avatar/avatar-13.png" class="rounded-0 me-10" alt="User Image">
               <div>
-                <h4 class="mb-0 fw-600">Nil Yeager</h4>
-                <p class="mb-0">Admin</p>
-              </div>
+                  <?php
+
+                  $LoggedUserInfo = $this->session->userdata();
+                  ?>
+                  <h4 class="mb-0 fw-600"><?php echo $LoggedUserInfo['firstname'] . ' ' . $LoggedUserInfo['lastname'] ?>
+                  </h4>
+                  <p class="mb-0"><?php echo $LoggedUserInfo['username'] ?></p>
+                </div>
             </div>
 
           </div>
