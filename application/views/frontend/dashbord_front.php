@@ -103,9 +103,15 @@
             <div class="d-flex align-items-center justify-content-between">
               <div class="image d-flex align-items-center">
                 <img src="images/avatar/avatar-13.png" class="rounded-0 me-10" alt="User Image">
+               
+                <?php 
+   
+   $LoggedUserInfo = $this->session->userdata() ;
+    ?>
+
                 <div>
-                  <h4 class="mb-0 fw-600">Nil Yeager</h4>
-                  <p class="mb-0">Admin</p>
+                  <h4 class="mb-0 fw-600"><?php echo $LoggedUserInfo['firstname'].' '.$LoggedUserInfo['lastname'] ?></h4>
+                  <p class="mb-0"><?php echo $LoggedUserInfo['username'] ?></p>
                 </div>
               </div>
             </div>
@@ -156,6 +162,8 @@
                         <h3 style="text-align: center;
     margin-bottom: 40px;
     font-weight: 600;">Welcome to CSS Project Tracker Please Choose Your Module </h3>
+
+   
                       </div>
                     </div>
 
