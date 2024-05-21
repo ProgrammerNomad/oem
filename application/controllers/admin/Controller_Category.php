@@ -37,9 +37,9 @@ class Controller_Category extends Admin_Controller
 
                     foreach ($Cat3 as $ChildCat3) {
                         $options .= '<option class="cat-2" value= "' . $ChildCat3->id . '">---' . $ChildCat3->name . '</option>';
-    
+
                     }
-                
+
                 }
 
             }
@@ -89,86 +89,61 @@ class Controller_Category extends Admin_Controller
 
             $options = '<option value="">Parent</option>';
 
-            foreach ($Allcat as $Cat) {
-                if ($ParentId == $Cat->id) {
-                    // Check if the parent category is not the same as the current category
-                    if ($Cat->id != $id) {
-                        $options .= '<option value="' . $Cat->id . '" selected>' . $Cat->name . '</option>';
-                    } else {
-                        $options .= '<option value="' . $Cat->id . '">' . $Cat->name . '</option>';
-                    }
+
+
+
+
+            // Get data from Category table
+
+            $options = '<option class="cat" value="0">Select Category</option>';
+
+
+            $cat = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => 0])->result();
+
+
+            foreach ($cat as $ChildCat) {
+
+                if ($ParentId == $ChildCat->id) {
+                    $options .= '<option class="cat" value= "' . $ChildCat->id . '" selected>' . $ChildCat->name . '</option>';
                 } else {
-                    $options .= '<option value="' . $Cat->id . '">' . $Cat->name . '</option>';
+                    $options .= '<option class="cat" value= "' . $ChildCat->id . '">' . $ChildCat->name . '</option>';
                 }
+
+
+
+                $cat1 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat->id])->result();
+                foreach ($cat1 as $ChildCat1) {
+
+                    if ($ParentId == $ChildCat1->id) {
+
+                        $options .= '<option class="cat-1" value= "' . $ChildCat1->id . '" selected>-' . $ChildCat1->name . '</option>';
+
+                    } else {
+
+                        $options .= '<option class="cat-1" value= "' . $ChildCat1->id . '">-' . $ChildCat1->name . '</option>';
+                    }
+
+                    $Cat2 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat1->id])->result();
+
+                    foreach ($Cat2 as $ChildCat2) {
+
+                        if ($ParentId == $ChildCat2->id) {
+
+                            $options .= '<option class="cat-2" value= "' . $ChildCat2->id . '" selected>--' . $ChildCat2->name . '</option>';
+
+                        } else {
+
+                            $options .= '<option class="cat-2" value= "' . $ChildCat2->id . '">--' . $ChildCat2->name . '</option>';
+
+                        }
+
+                        // Level 3 not required
+
+                    }
+
+                }
+
             }
-
-
-            
-			// Get data from Category table
-
-			$options = '<option class="cat" value="0">Select Category</option>';
-
-
-			$cat = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => 0])->result();
-
-
-			foreach ($cat as $ChildCat) {
-
-				if ($ParentId == $ChildCat->id) {
-					$options .= '<option class="cat" value= "' . $ChildCat->id . '" selected>' . $ChildCat->name . '</option>';
-				} else {
-					$options .= '<option class="cat" value= "' . $ChildCat->id . '">' . $ChildCat->name . '</option>';
-				}
-
-
-
-				$cat1 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat->id])->result();
-				foreach ($cat1 as $ChildCat1) {
-
-					if ($ParentId == $ChildCat1->id) {
-
-						$options .= '<option class="cat-1" value= "' . $ChildCat1->id . '" selected>-' . $ChildCat1->name . '</option>';
-
-					} else {
-
-						$options .= '<option class="cat-1" value= "' . $ChildCat1->id . '">-' . $ChildCat1->name . '</option>';
-					}
-
-					$Cat2 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat1->id])->result();
-
-					foreach ($Cat2 as $ChildCat2) {
-
-						if ($ParentId == $ChildCat2->id) {
-
-							$options .= '<option class="cat-2" value= "' . $ChildCat2->id . '" selected>--' . $ChildCat2->name . '</option>';
-
-						} else {
-
-							$options .= '<option class="cat-2" value= "' . $ChildCat2->id . '">--' . $ChildCat2->name . '</option>';
-
-						}
-
-						$Cat3 = $this->data['parent_category'] = $this->Admin_model->fetch_data("categories", "*", ['active' => 1, 'parent_category' => $ChildCat2->id])->result();
-
-						foreach ($Cat3 as $ChildCat3) {
-
-							if ($ParentId == $ChildCat3->id) {
-
-								$options .= '<option class="cat-2" value= "' . $ChildCat3->id . '" selected>---' . $ChildCat3->name . '</option>';
-
-							}else{
-
-							$options .= '<option class="cat-2" value= "' . $ChildCat3->id . '">---' . $ChildCat3->name . '</option>';
-
-						}
-
-						}
-
-					}
-
-				}
-
-			}
 
 
 
@@ -208,27 +183,25 @@ class Controller_Category extends Admin_Controller
 
             $breadcrumb = $parentCategory['name'];
 
-            if($parentCategory['parent_category'] != 0)
-            {
-                
+            if ($parentCategory['parent_category'] != 0) {
+
                 $parentCategory2 = $this->model_category->getParentCategoryNameById($parentCategory['parent_category']);
 
-                $breadcrumb = $parentCategory2['name'].' > '.$breadcrumb;
+                $breadcrumb = $parentCategory2['name'] . ' > ' . $breadcrumb;
 
-                if($parentCategory2['parent_category'] != 0)
-                {
-                    
+                if ($parentCategory2['parent_category'] != 0) {
+
                     $parentCategory3 = $this->model_category->getParentCategoryNameById($parentCategory2['parent_category']);
-    
-                    $breadcrumb = $parentCategory3['name'].' > '.$breadcrumb;
-    
+
+                    $breadcrumb = $parentCategory3['name'] . ' > ' . $breadcrumb;
+
                 }
 
             }
-          //  echo  '<pre>';
-          //  print_r($parentCategory);
+            //  echo  '<pre>';
+            //  print_r($parentCategory);
 
-           // die();
+            // die();
 
             $result['data'][$key] = array(
                 $breadcrumb,

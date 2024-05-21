@@ -110,7 +110,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Edit Category</h4>
+                <h4 class="modal-title">Edit OEM Module</h4>
             </div>
 
             <form role="form" action="<?php echo base_url('admin/Controller_Category/update/' . (isset($category['id']) ? $category['id'] : '')) ?>" method="post" id="updateForm">
@@ -119,16 +119,14 @@
                     <div id="messages"></div>
 
                     <div class="form-group">
-                        <label for="edit_category_name">Category</label>
+                        <label for="edit_category_name">OEM Module Name</label>
                         <input type="text" class="form-control" id="edit_category_name" name="edit_category_name" placeholder="Enter category name" autocomplete="off" value="<?php echo isset($category['name']) ? $category['name'] : ''; ?>">
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_parent_category">Parent Category</label>
+                        <label for="edit_parent_category">OEM Module Category</label>
                         <select class="form-control" id="edit_parent_category" name="edit_parent_category">
-                            <?php foreach ($parent_categories as $parent_category): ?>
-                                <option value="<?php echo $parent_category['id']; ?>" <?php echo isset($category['parent_category']) && $category['parent_category'] == $parent_category['id'] ? 'selected' : ''; ?>><?php echo $parent_category['name']; ?></option>
-                            <?php endforeach; ?>
+                            
                         </select>
                     </div>
                     <!-- edit_parent_category -->
