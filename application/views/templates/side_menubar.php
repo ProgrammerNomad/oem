@@ -18,29 +18,23 @@
             </li> -->
           <?php endif; ?>
     
-          <?php if(in_array('createCategory', $user_permission) || in_array('updateCategory', $user_permission) || in_array('viewCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
+          <?php if(in_array('viewCategory', $user_permission)): ?>
             <li id="categoryNav">
               <a href="<?php echo base_url('/admin/Controller_Category/') ?>">
-                <i class="fa fa-th"></i> <span>Category</span>
+                <i class="fa fa-th"></i> <span>OEM Madule</span>
               </a>
             </li>
           <?php endif; ?>
 
-          <?php if(in_array('createCategory', $user_permission) || in_array('updateCategory', $user_permission) || in_array('viewCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
-            <li id="categoryNav">
+   
+
+         <?php if(in_array('createCategory', $user_permission) || in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?> 
+          <li id="categoryNav">
               <a href="<?php echo base_url('/admin/Controller_Salesdoc/') ?>">
-                <i class="fa fa-th"></i> <span>Sales Doc</span>
+                <i class="fa fa-th"></i> <span>Upload</span>
               </a>
             </li>
-          <?php endif; ?>
-
-        <!-- <?php if(in_array('createCategory', $user_permission) || in_array('updateCategory', $user_permission) || in_array('viewCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?> -->
-            <!-- <li id="categoryNav"> -->
-              <!-- <a href="<?php echo base_url('admin/Controller_SubCategory/') ?>"> -->
-                <!-- <i class="fa fa-th"></i> <span>Sub Category</span> -->
-              <!-- </a>
-            </li>
-          <?php endif; ?> -->
+          <?php endif; ?> 
 
 
           <?php if(in_array('createStore', $user_permission) || in_array('updateStore', $user_permission) || in_array('viewStore', $user_permission) || in_array('deleteStore', $user_permission)): ?>

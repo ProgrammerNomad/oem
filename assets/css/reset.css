@@ -1,0 +1,16 @@
+#parent_category>option {
+    font-size: 18px;
+    color: #fff;
+}
+
+#parent_category>.cat {
+    background-color: #34568B;
+}
+
+#parent_category>.cat-1 {
+    background-color: #FF6F61;
+}
+
+#parent_category>.cat-2 {
+    background-color: #88B04B;
+}

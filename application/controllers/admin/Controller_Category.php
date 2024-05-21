@@ -231,10 +231,8 @@ class Controller_Category extends Admin_Controller
            // die();
 
             $result['data'][$key] = array(
-                $value['name'],
                 $breadcrumb,
-                // Display parent category name instead of ID
-
+                $value['name'],
                 $status,
                 $buttons
             );

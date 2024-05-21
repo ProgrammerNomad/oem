@@ -26,6 +26,7 @@
   <!-- addedd -->
   <!-- <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/style/style.css') ?>"> -->
   <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/style/main.css') ?>"> 
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>"> 
 
   <!-- icheck -->
   <!-- iCheck for checkboxes and radio inputs -->

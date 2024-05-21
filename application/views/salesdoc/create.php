@@ -44,8 +44,8 @@
 
 
               <div class="form-group">
-                <label for="category_id">category_id</label>
-                <select class="form-control" id="category_id" name="category_id">
+                <label for="category_id">OEM Module</label>
+                <select class="form-control" id="parent_category" name="category_id">
                   <?php
                   echo $company_data['categories'] ;
                   ?>
@@ -53,48 +53,48 @@
               </div>
 
               <div class="form-group">
-                <label for="title">title</label>
+                <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title"
                   placeholder="Enter company name" value="" autocomplete="off">
               </div>
               <div class="form-group">
-                <label for="description">description</label>
+                <label for="description">Description</label>
                 <textarea type="text" class="form-control" id="description" name="description"
                   placeholder="Enter company name" value="" autocomplete="off"></textarea>
               </div>
 
               <div class="form-group">
-                <label for="picture">picture</label>
+                <label for="picture">Picture</label>
                 <input type="file" class="form-control" id="picture" name="picture[]"
                   placeholder="Enter company name" multiple>
               </div>
 
               <div class="form-group">
-                <label for="pdf">pdf</label>
+                <label for="pdf">Pdf</label>
                 <input type="file" class="form-control" id="pdf" name="pdf[]"
                   placeholder="Upload PDF" multiple>
               </div>
 
               <div class="form-group">
-                <label for="drawing">drawing</label>
+                <label for="drawing">Drawing</label>
                 <input type="file" class="form-control" id="drawing" name="drawing[]"
                   placeholder="Upload drawing" multiple>
               </div>
 
               <div class="form-group">
-                <label for="doc_file">doc_file</label>
+                <label for="doc_file">Document file</label>
                 <input type="file" class="form-control" id="doc_file" name="doc_file[]"
                   placeholder="Upload doc_file" multiple>
               </div>
 
               <div class="form-group">
-                <label for="power_point">power_point</label>
+                <label for="power_point">Powerpoint file</label>
                 <input type="file" class="form-control" id="power_point" name="power_point[]"
                   placeholder="Upload power_point" multiple>
               </div>
 
               <div class="form-group">
-                <label for="active">active</label>
+                <label for="active">Status</label>
 
                   <select name="active" id="active" class="form-control">
                     <option value="1">Active</option>

@@ -4,12 +4,11 @@
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      Manage Category
-      
+      Manage OEM Madule
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Category</li>
+      <li class="active">OEM Madule</li>
     </ol>
   </section>
 
@@ -32,7 +31,7 @@
         <?php endif; ?>
 
         <?php if(in_array('createCategory', $user_permission)): ?>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add Category</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add OEM Madule</button>
           <br /> <br />
         <?php endif; ?>
 
@@ -42,16 +41,14 @@
             <table id="manageTable" class="table table-bordered table-hover table-striped">
               <thead>
               <tr>
+              <th>Parent Category</th>
                 <th>Category</th>
-                <th>Parent Category</th>
-
                 <th>Status</th>
                 <?php if(in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
                   <th>Action</th>
                 <?php endif; ?>
               </tr>
               </thead>
-
             </table>
           </div>
         </div>
@@ -66,7 +63,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add Category</h4>
+        <h4 class="modal-title">Add OEM Madule</h4>
       </div>
       <form role="form" action="<?php echo base_url('admin/Controller_Category/create') ?>" method="post" id="createForm">
         <div class="modal-body">
@@ -173,7 +170,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Remove Category</h4>
+        <h4 class="modal-title">Remove OEM Madule</h4>
       </div>
 
       <form role="form" action="<?php echo base_url('admin/Controller_Category/remove') ?>" method="post" id="removeForm">
