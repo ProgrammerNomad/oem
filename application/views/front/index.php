@@ -119,7 +119,7 @@
 				</li>
         <!-- <li><a href="<?php echo base_url('Login/authenticate') ?>"><i class="fa fa-power-off"></i> <span>Logout</span></a></li> -->
                 <li>
-          <a href="admin/auth/login_front">
+          <a href="admin/auth/login">
               <i class="fa fa-sign-out"></i>
               <span>Logout</span>
           </a>

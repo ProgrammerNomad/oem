@@ -49,6 +49,18 @@ class Model_auth extends CI_Model
 		}
 		
 	}
+
+	public function checkUserGroup($id) 
+	{
+		if($id) {
+			$sql = 'SELECT * FROM user_group WHERE user_id = ?';
+			$query = $this->db->query($sql, array($id));
+
+			return $query->row_array() ;
+		}
+
+		return false;
+	}
 	public function check_email_front($email) 
 	{
 		if($email) {

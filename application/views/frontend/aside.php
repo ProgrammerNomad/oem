@@ -36,7 +36,7 @@
                     </li>
                     <!-- <?php echo base_url('Login/authenticate') ?>"><i class="fa fa-power-off"></i> <span>Logout</span></a></li>  -->
                     <li>
-                        <a href="auth/logout_front">
+                        <a href="auth/logout">
                             <i class="fa fa-sign-out"></i>
                             <span>Logout</span>
                         </a>

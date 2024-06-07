@@ -15,6 +15,8 @@ class Auth extends Admin_Controller
     }
     public function login()
     {
+
+        // print_r($_REQUEST); die();
         $this->logged_in();
 
         $this->form_validation->set_rules('email', 'Email', 'required');
@@ -43,7 +45,16 @@ class Auth extends Admin_Controller
                     );
 
                     $this->session->set_userdata($logged_in_sess);
-                    redirect('admin/dashboard', 'refresh');
+
+                    $UserGroup = $this->model_auth->checkUserGroup($login['id']);
+
+
+
+                    if ($UserGroup['group_id'] == 6) {
+                        redirect('dashboard', 'refresh');
+                    } else {
+                        redirect('admin/dashboard', 'refresh');
+                    }
 
                 } else {
                     $this->data['errors'] = 'Incorrect username/password combination';
@@ -74,56 +85,11 @@ class Auth extends Admin_Controller
 
     public function login_front()
     {
-        $this->logged_in();
 
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->load->view('front/login');
 
-        if ($this->form_validation->run() == TRUE) {
-            $email_exists = $this->model_auth->check_email($this->input->post('email'));
-
-            if ($email_exists == TRUE) {
-                $login = $this->model_auth->login($this->input->post('email'), $this->input->post('password'));
-
-                if ($login) {
-                    $brandid = '';
-                    if ($login['roll'] == 'A') {
-                        $brandid = $this->data['itmdata'][0]->id;
-                    }
-
-                    $logged_in_sess = array(
-                        'id' => $login['id'],
-                        'username' => $login['username'],
-                        'firstname' => $login['firstname'],
-                        'lastname' => $login['lastname'],
-                        'email' => $login['email'],
-                        'roll' => $login['roll'],
-                        'brand_id' => ($brandid) ? $brandid : '',
-                        'logged_in' => TRUE
-                    );
-
-                    $this->session->set_userdata($logged_in_sess);
-
-                    redirect('dashboard', 'refresh');
-                } else {
-                    $this->data['errors'] = 'Incorrect username/password combination';
-                    $this->load->view('front/login', $this->data);
-                }
-            } else {
-                $this->data['errors'] = 'Email does not exist';
-                $this->load->view('front/login', $this->data);
-            }
-        } else {
-            $this->load->view('front/login');
-        }
     }
-    public function logout_front()
-    {
-        $this->load->library('session');
-        $this->session->sess_destroy();
-        $this->session->set_flashdata('success', 'Logout successful');
-        redirect('Auth/login_front');
-    }
+
 
 
 
